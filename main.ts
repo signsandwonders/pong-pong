@@ -19,10 +19,20 @@ input.onButtonPressed(Button.B, function () {
         plotPaddle()
     }
 })
+function plotBall () {
+    if (ball[0] == -1) {
+        ball = [randint(0, 4), 0]
+    }
+    led.plot(ball[0], ball[1])
+}
+let ball: number[] = []
 let paddle = 0
 music.play(music.stringPlayable("C D E F G A E C5 ", 352), music.PlaybackMode.UntilDone)
 paddle = 0
+ball = [-1, -1]
+let pball = [-1, -1]
 plotPaddle()
+plotBall()
 basic.forever(function () {
 	
 })
